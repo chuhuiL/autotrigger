@@ -26,7 +26,7 @@ def read_arduino_responses(arduino, csv_writer, csvfile):
                 continue
 
             if response:
-                current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
                 csv_writer.writerow([current_time, response])
                 csvfile.flush()
                 print(f"Arduino Response: {response} at {current_time}")
